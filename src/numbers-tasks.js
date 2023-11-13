@@ -261,17 +261,17 @@ function getCube(num) {
  *   10 => 55
  */
 function getFibonacciNumber(index) {
-  let a = 0;
-  let b = 1;
-  let c = index;
+  let prev = 0;
+  let curr = 1;
+  let next = index;
 
   for (let i = 2; i <= index; i += 1) {
-    c = a + b;
-    a = b;
-    b = c;
+    next = prev + curr;
+    prev = curr;
+    curr = next;
   }
 
-  return c;
+  return next;
 }
 
 /**
@@ -634,16 +634,16 @@ function getHypotenuse(a, b) {
  */
 function getCountOfOddNumbers(number) {
   const num = Math.abs(number);
-  let count = 0;
   const isOdd = (n) => n % 2 !== 0;
+  let countOdd = 0;
 
   for (let i = 0; i <= num; i += 1) {
     if (isOdd(i)) {
-      count += 1;
+      countOdd += 1;
     }
   }
 
-  return count;
+  return countOdd;
 }
 
 module.exports = {
